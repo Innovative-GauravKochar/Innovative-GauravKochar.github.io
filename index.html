@@ -45,6 +45,20 @@ Email: <input name="email" required="" size="60" type="email"/>
 <br>
  
 <script type="text/javascript">
+
+function generateString(length) {
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    let result = ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+}
+
+
  function identify(e){
  
    e.preventDefault();
@@ -59,10 +73,11 @@ Email: <input name="email" required="" size="60" type="email"/>
 // // Identify call
 
 for(let i=1;i<=200;i++){
-    analytics.identify(`user-${54321+i}`, {
-      email: `peter+${i}@example.com`,
+  let  val=generateString(2);
+    analytics.identify(`user-${generateString(5)}`, {
+      email: `peter+${val}@example.com`,
     "traits": {
-		"email":  `peter+${i}@example.com`,
+		"email":  `peter+${val}@example.com`,
 		"first_name": `John-${i}`,
 		"last_name": "Doe",
 		"address": {
