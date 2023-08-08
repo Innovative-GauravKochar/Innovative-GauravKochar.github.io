@@ -73,7 +73,7 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 // // Identify call
 
 for(let i=1;i<=100;i++){
-  let  val=generateString(2);
+  let  val=generateString(2).trim();
     analytics.identify(`user-${generateString(5)}`, {
       email: `${val}@example.com`,
     "traits": {
