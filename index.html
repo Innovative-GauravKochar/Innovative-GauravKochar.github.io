@@ -49,7 +49,7 @@ Email: <input name="email" required="" size="60" type="email"/>
 function generateString(length) {
 const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-    let result = ' ';
+    let result = '';
     const charactersLength = characters.length;
     for ( let i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -74,36 +74,36 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 
 for(let i=1;i<=100;i++){
   let  val=generateString(2).trim();
-  //   analytics.identify(`user-${generateString(5)}`, {
-  //     email: `${val}@example.com`,
-  //   "traits": {
-	// 	"email":  `${val}@example.com`,
-	// 	"first_name": `John-${val}`,
-	// 	"last_name": "Doe",
-	// 	"address": {
-	// 		"city": "San Francisco",
-	// 		"country": "USA",
-	// 		"postal_code": "600001",
-	// 		"state": "California",
-	// 		"street": "Vancover st"
-	// 	},
-	// 	"graduation_date": "1664533942262",
-	// 	"lifecyclestage": "subscriber",
-	// 	"company": "Segment",
-	// 	"phone": "+13134561129",
-	// 	"website": "segment.inc1"
-	// },
-  //   });
+    analytics.identify(`user-${generateString(5)}`, {
+      email: `${val}@example.com`,
+    "traits": {
+		"email":  `${val}@example.com`,
+		"first_name": `John-${val}`,
+		"last_name": "Doe",
+		"address": {
+			"city": "San Francisco",
+			"country": "USA",
+			"postal_code": "600001",
+			"state": "California",
+			"street": "Vancover st"
+		},
+		"graduation_date": "1664533942262",
+		"lifecyclestage": "subscriber",
+		"company": "Segment",
+		"phone": "+13134561129",
+		"website": "segment.inc1"
+	},
+    });
 
-     analytics.track("Ordered", {
-      "email":`${val}@example.com`,
-      "properties": {
-        "property1": 1,
-        "property2": "test",
-        "property3": true
-      },
-      "userId": `user-${generateString(5)}`,
- });
+//      analytics.track("Ordered", {
+//       "email":`${val}@example.com`,
+//       "properties": {
+//         "property1": 1,
+//         "property2": "test",
+//         "property3": true
+//       },
+//       "userId": `user-${generateString(5)}`,
+//  });
   }
 //  //  Sign-up Track call
     // analytics.track('user signed up', user, function() {
