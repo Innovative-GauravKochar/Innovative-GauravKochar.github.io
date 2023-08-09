@@ -30,8 +30,8 @@
 <!--Location for users to enter their information to receive the sneakerhead newsletter-->
 <form name="sneakersignup" onsubmit="identify(event)">
 <br> <br>
-Name: <input name="fullname" required="" size="60" type="text"/>
-<br> <br>
+Count: <input name="count" required="" size="60" type="number"/>
+<!-- <br> <br>
 Email: <input name="email" required="" size="60" type="email"/>
 <br> <br>
 <label for="shoeType">Preferred Shoe</label>
@@ -40,7 +40,7 @@ Email: <input name="email" required="" size="60" type="email"/>
    <option value="Cross Trainers">Cross Trainers</option>
    <option value="Sports">Sports</option>
  </select>
-<br> <br>
+<br> <br> -->
  <input name="submit" type="submit" value="submit"/> </form>
 <br>
  
@@ -63,16 +63,16 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
  
    e.preventDefault();
    var form = e.target;
-   var email = form["email"].value;
-   var fullname = form["fullname"].value;
-   var shoeType = form["shoeType"].value;
-   var user = {
-     email: email,
-     name: fullname
-   };
+  //  var email = form["email"].value;
+   var count = form["count"].value;
+  //  var shoeType = form["shoeType"].value
+  //  var user = {
+  //    email: email,
+  //    name: fullname
+  //  };
 // // Identify call
 
-for(let i=1;i<=100;i++){
+for(let i=1;i<=count;i++){
   let  val=generateString(2).trim();
     analytics.identify(`user-${generateString(5)}`, {
       email: `${val}@example.com`,
