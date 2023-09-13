@@ -73,13 +73,13 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 // // Identify call
 
 for(let i=1;i<=count;i++){
-  let  val=generateString(5).trim();
+  let  val=generateString(2).trim();
     analytics.identify(`user-${generateString(5)}`, {
       email: `test-${val}@example.com`,
     "traits": {
 		"email":  `test-${val}@example.com`,
-		"first_name": `John-${val}`,
-		"last_name": "Doe",
+		"first_name": `Updated-John-${val}`,
+		"last_name": "Updated Doe",
 		"address": {
 			"city": "San Francisco",
 			"country": "USA",
@@ -88,7 +88,7 @@ for(let i=1;i<=count;i++){
 			"street": "Vancover st"
 		},
 		"graduation_date": "1664533942262",
-		"lifecyclestage": "subscriber",
+		"lifecyclestage": "customer",
 		"company": "Segment",
 		"phone": "+13134561129",
 		"website": "segment.inc1"
