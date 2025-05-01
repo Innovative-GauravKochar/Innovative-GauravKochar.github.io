@@ -15,8 +15,8 @@
   </script> -->
  
   <script>
-    !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.build/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="JFzYvPyo6UEjppn5FHCW7tvqURQXRGFR";;analytics.SNIPPET_VERSION="5.2.0";
-    analytics.load("uIAoArCAdoYYKNCemGpiLMOxTkl3PSaQ");
+    !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="JFzYvPyo6UEjppn5FHCW7tvqURQXRGFR";;analytics.SNIPPET_VERSION="5.2.0";
+    analytics.load("JFzYvPyo6UEjppn5FHCW7tvqURQXRGFR");
     analytics.page();
     }}();
   </script>
@@ -61,7 +61,6 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 
 
  function identify(e){
- 
    e.preventDefault();
    var form = e.target;
   //  var email = form["email"].value;
@@ -102,18 +101,18 @@ const maxLength = Math.max(
   for(let i=start;i<=count;i++){
     // let  val=generateString(4).trim();
       analytics.identify(`user-jadeja-${i}`, {
-      "email": ` jadeja-sinh+${i}@unthinkable.co `,
-      "first_name": " Jadeja",
-      "last_name": "sinh ",
-      "phone": ` (571)705681${i} `,
-      "postal": " 94118 ",
-      "state": " California "
-
+      "email": `jadeja-sinh+${i}@twilio.co`
       });
 
-      analytics.track("Unthinkable Sample Event", {
-        "email":`jadeja-sinh+${i}@unthinkable.co`,
-        "properties": {},
+      analytics.track("Twilio Sample Event", {
+        "email":`jadeja-sinh+${i}@twilio.co`,
+        "properties": {
+		"firstName": `jadeja-${i}`,
+		"lastName": `sinh-${i}`,
+		"phone": `9816125834-${i}`,
+		"crm_id": `267dc63f-3e2d-4675-9585-1221e00455-${i}`,
+		"mobile_advertising_id": `7A3CBEA0-BDF5-11E4-8DFC-AA07A5B0-${i}`
+	},
         "userId": `user-jadeja-${i}`,
   });
   // }
@@ -209,9 +208,23 @@ const maxLength = Math.max(
   //    ]
   //  });
  }
+}
  
 </script>
  
 </body>
 </html>
 
+
+
+
+
+<!-- // curl --request POST \
+//   --url http://internal-k8s-bulkapi-bulkapi-eb78a58732-316493973.us-west-2.elb.amazonaws.com/jobs \
+//   --header 'content-type: application/json' \
+//   --data '{
+//   "source_id": "mhhQECD9PSq6wpGPxquyh9",
+//   "s3_urls": [
+//    "s3://bulk-batch-e2e-payloads-stage-usw2/multistatus-test/google-ads-conversions-userlist-all-success.ndjson"
+//   ]
+// }' -->
